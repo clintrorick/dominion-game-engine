@@ -23,7 +23,7 @@ import kotlin.system.measureTimeMillis
 
     const val discount_rate = .99F
     const val number_of_epochs = 1000
-    const val batches_per_epoch = 5 // = number of coroutines
+    const val batches_per_epoch = 16 // = number of coroutines
     const val games_per_batch = 20000
 
 
