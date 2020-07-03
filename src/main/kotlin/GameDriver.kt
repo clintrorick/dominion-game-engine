@@ -24,7 +24,7 @@ import kotlin.system.measureTimeMillis
     const val discount_rate = .99F
     const val number_of_epochs = 1000
     const val batches_per_epoch = 32 // = number of coroutines
-    const val games_per_batch = 20000
+    const val games_per_batch = 10000
 
 
     const val learning_rate_decay = 1F // 1 = no decay
