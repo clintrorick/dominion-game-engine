@@ -23,9 +23,10 @@ import kotlin.system.measureTimeMillis
 
     const val discount_rate = .99F
     const val number_of_epochs = 1000
-    const val batches_per_epoch = 32 // = number of coroutines
-    const val games_per_batch = 1000
+    const val batches_per_epoch = 4 // = number of coroutines
+    const val games_per_batch = 8000
 
+    //TODO make q-tables within a batch local to avoid blocking - this will take a lot of memory
 
     const val learning_rate_decay = 1F // 1 = no decay
     const val learning_rate_floor = .5F
@@ -71,14 +72,14 @@ import kotlin.system.measureTimeMillis
             player_1_strategy = decidePlayerActionViaPureGreed
             player_1_strategy_name = ::decidePlayerActionViaPureGreed.name
         }else{
-//            if (player_1_strategy_name == ::decidePlayerActionViaUCB.name){
-//                player_1_strategy = decidePlayerActionViaEpsilonPoint1
-//                player_1_strategy_name = ::decidePlayerActionViaEpsilonPoint1.name
-//            } else if (player_1_strategy_name == ::decidePlayerActionViaEpsilonPoint1.name
-//                        || player_1_strategy_name == ::decidePlayerActionViaPureGreed.name ){
+            if (player_1_strategy_name == ::decidePlayerActionViaUCB.name){
+                player_1_strategy = decidePlayerActionViaEpsilonPoint1
+                player_1_strategy_name = ::decidePlayerActionViaEpsilonPoint1.name
+            } else if (player_1_strategy_name == ::decidePlayerActionViaEpsilonPoint1.name
+                        || player_1_strategy_name == ::decidePlayerActionViaPureGreed.name ){
                 player_1_strategy = decidePlayerActionViaUCB
                 player_1_strategy_name = ::decidePlayerActionViaUCB.name
-//            }
+            }
         }
     }
 

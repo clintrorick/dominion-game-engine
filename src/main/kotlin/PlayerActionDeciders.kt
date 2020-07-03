@@ -8,8 +8,7 @@ import kotlin.math.log
 import kotlin.math.sqrt
 import kotlin.random.Random
 
-
-//TODO UCB to make the learning process prioritize unseen paths?
+//TODO is UCB updating the q table properly?
 
     val decidePlayerActionRandomly = fun (availableActions: Set<PlayerAction>, gs: GameState, qTable : QTable) : PlayerAction {
         try {
@@ -122,7 +121,7 @@ import kotlin.random.Random
                                             qTable : QTable,
                                             printAction : Boolean) : PlayerAction{
     val rand : Double = Random.nextInt(100) / 100F.toDouble()
-        if (rand > 0.10F) {
+        if (rand > 0.05F) {
 
             val actionToQMap : MutableMap<PlayerAction,Double> = mutableMapOf()
 
