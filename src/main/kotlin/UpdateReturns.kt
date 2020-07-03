@@ -30,8 +30,8 @@ fun updateStateActionReturnsBellman(statesAndActionsTraversedByP1ThisEpisode : M
         if (dynamic_learning_rate > 0.5F)
             dynamic_learning_rate = 0.5F.toDouble()
 
-        if (dynamic_learning_rate < 0.1F)
-            dynamic_learning_rate = 0.1F.toDouble()
+        if (dynamic_learning_rate < 0.01F)
+            dynamic_learning_rate = 0.01F.toDouble()
 
         val newQSA : Double = bellmanBackup(oldQSA = oldQSA,
                                             dynamic_learning_rate = dynamic_learning_rate,
