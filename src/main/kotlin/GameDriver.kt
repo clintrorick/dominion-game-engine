@@ -45,7 +45,7 @@ import kotlin.system.measureTimeMillis
 
     fun ucbAlgo(q : Double, countOfParentStateEncountered : Int, countThisStateActionTaken : Int) : Double {
         //TODO change the explore factor based on learning delta - if delta is too low, explore more
-        val exploreFactor = sqrt( 10 * ln(countOfParentStateEncountered.toDouble())  / countThisStateActionTaken.toDouble())
+        val exploreFactor = sqrt( 2 * ln(countOfParentStateEncountered.toDouble())  / countThisStateActionTaken.toDouble())
         return q + exploreFactor
 //todo decay exploration factor over time
         /** q + sqrt(2*ln(n)/nI)  // where n = number of actions selected over all training,
