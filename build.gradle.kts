@@ -8,7 +8,7 @@ version = "1.0.2"
 group = "org.clintrorick"
 
 application {
-    mainClass.set("org.clintrorick.GameDriver.kt")
+    mainClass.set("org.clintrorick.GameDriverKt")
 }
 
 repositories {
